@@ -1,0 +1,45 @@
+package com.pbrm.backend.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.pbrm.backend.model.User;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+
+	@GetMapping("/test2")
+	public ModelAndView users(Model model) {
+		ModelAndView modelandview = new ModelAndView("test2");
+		modelandview.addObject("users", getUsers());
+		return modelandview;
+	}
+
+	@GetMapping("/list")
+	public ModelAndView users(@RequestParam("username") String username) {
+		ModelAndView modelandview = new ModelAndView("test2");
+		// System.out.println(getUsers().stream().filter(data ->
+		// data.getUser()==username));
+		modelandview.addObject("users",
+				getUsers().stream().filter(data -> data.getUser() == username).collect(Collectors.toList()));
+		return modelandview;
+	}
+
+	private List<User> getUsers() {
+		List<User> users = new ArrayList<User>();
+		users.add(new User("User1", "12345"));
+		users.add(new User("User2", "12345"));
+		users.add(new User("User3", "12345"));
+		return users;
+	}
+
+}

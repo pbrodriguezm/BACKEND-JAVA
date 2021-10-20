@@ -1,0 +1,2 @@
+#spring propeties server:  port: 667 
+spring:   web:    locale: es_ES 

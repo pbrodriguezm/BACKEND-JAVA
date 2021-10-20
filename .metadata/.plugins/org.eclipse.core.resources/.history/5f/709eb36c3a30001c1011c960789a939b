@@ -1,0 +1,10 @@
+package com.pbrm.backend.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class TestController {
+	public String Test() {
+		return "Testt ok";
+	}
+}

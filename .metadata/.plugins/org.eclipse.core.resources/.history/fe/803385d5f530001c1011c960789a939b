@@ -1,0 +1,23 @@
+package com.pbrm.backend.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.pbrm.backend.model.User;
+import com.pbrm.backend.service.TestService;
+
+@Service("testService")
+public class TestServiceImpl implements TestService {
+
+	@Override
+	public List<User> getUsers() {
+		List<User> users = new ArrayList<User>();
+		users.add(new User("User1", "12345"));
+		users.add(new User("User2", "12345"));
+		users.add(new User("User3", "12345"));
+		return users;
+	}
+
+}

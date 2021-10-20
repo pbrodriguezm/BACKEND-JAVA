@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test 2.1 Backend Estructura</title>
+</head>
+<body>
+	<h1>Test de estructura enviando objecto</h1>
+
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody th:each="user : ${users}">
+			<tr>
+				<th th:text="${user.user}"></th>
+				<th th:text="${user.password}"></th>
+			</tr>
+		</tbody>
+
+	</table>
+
+	<hr>
+<h2>Registro Usuario</h2>
+	<form action="#" th:action="@{/adduser}" th:object="${user}"
+		method="post">
+		<p>
+			Nombres <input type="text" th:field="*{name}">
+		</p>
+		<p>
+			Usuario <input type="text" th:field="*{user}">
+		</p>
+		<p>
+			Contraseña <input type="text" th:field="*{password}">
+		</p>
+		<p>
+			<button type="submit" value="Guardar">Guardar</button>
+		</p>
+	</form>
+	
+	se creo a <b><span th:text="{userResult.name}"></b> correctamente!!! </span>
+</body>
+</html>

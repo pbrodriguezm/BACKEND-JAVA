@@ -1,0 +1,28 @@
+package com.pbrm.backend.component;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+@Component("requestTimeInterceptor")
+public class RequestTimeInterceptor extends HandlerInterceptorAdapter {
+
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		// se ejecuta despues despues de mostrar la vista del navegador
+		return super.preHandle(request, response, handler);
+	}
+
+	@Override
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
+			throws Exception {
+		// se ejecuta primero antes de entrar en el metodo del controlador
+		super.afterCompletion(request, response, handler, ex);
+	}
+	
+	
+
+}

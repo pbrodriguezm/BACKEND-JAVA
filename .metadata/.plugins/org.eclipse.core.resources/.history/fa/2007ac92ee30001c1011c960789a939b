@@ -1,0 +1,5 @@
+package com.pbrm.backend.component;
+
+public class RequestTimeInterceptor {
+
+}

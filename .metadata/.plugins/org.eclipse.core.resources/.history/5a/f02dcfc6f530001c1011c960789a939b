@@ -1,0 +1,19 @@
+package com.pbrm.backend.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.pbrm.backend.model.User;
+import com.pbrm.backend.service.TestService;
+
+@Service("testService")
+public class TestServiceImpl implements TestService {
+
+	@Override
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

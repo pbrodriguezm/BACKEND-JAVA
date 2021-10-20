@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test 2.1 Backend Estructura</title>
+</head>
+<body>
+	<h1>Test de estructura listo</h1>
+
+
+	<table>
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody th:each="${users}">
+			<tr>
+			</tr>
+		</tbody>
+
+	</table>
+</body>
+</html>

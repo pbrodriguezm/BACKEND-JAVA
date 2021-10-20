@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test 2.1 Backend Estructura</title>
+</head>
+<body>
+	<h1>Test de estructura enviando objecto</h1>
+
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody th:each="user : ${users}">
+			<tr>
+				<th th:text="${user.user}"></th>
+				<th th:text="${user.password}"></th>
+			</tr>
+		</tbody>
+
+	</table>
+
+	<hr>
+
+	<form action="#" th:action="@{/test2}" th:object="${user}"
+		method="post">
+		<p>
+			Nombres
+			<input type="text">
+		</p>
+		<p>
+			Usuario <input type="text">
+		</p>
+		<p>
+			Contraseña <input type="text">
+		</p>
+		<p>
+		<button type="submit" value="Guardar"></button>
+		</p>
+	</form>
+</body>
+</html>

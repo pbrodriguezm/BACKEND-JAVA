@@ -1,0 +1,24 @@
+package com.pbrm.backend.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping("/app")
+public class TestController {
+	
+	@GetMapping("/test")
+	public String test() {
+		return "test";
+	}
+	
+	@GetMapping(value = "/test1")
+	public ModelAndView user() {
+		return new ModelAndView("test1");
+	}
+
+
+}

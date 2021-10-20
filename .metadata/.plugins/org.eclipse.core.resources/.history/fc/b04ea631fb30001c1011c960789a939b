@@ -1,0 +1,1 @@
+#spring propeties spring:   web:    locale: es_ES   thymeleaf:    prefix: classpath:/templates/    suffix: .html    encoding: UTF-8                

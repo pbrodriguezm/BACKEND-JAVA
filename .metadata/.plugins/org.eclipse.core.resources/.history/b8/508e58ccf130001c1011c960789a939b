@@ -1,0 +1,5 @@
+package com.pbrm.backend.configuration;
+
+public class WebMvcConfig {
+
+}
